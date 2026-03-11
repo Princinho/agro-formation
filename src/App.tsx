@@ -4,13 +4,13 @@ import "./styles/globals.css";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-import Stats from "./components/Stats";
-import About from "./components/About";
-import WhyAfrica from "./components/WhyAfrica";
-import Program from "./components/Program";
-import Testimonials from "./components/Testimonials";
-import Tickets from "./components/Tickets";
-import { Faq, CtaFinal, Footer } from "./components/Footer";
+// import Stats from "./components/Stats";
+// import About from "./components/About";
+// import WhyAfrica from "./components/WhyAfrica";
+// import Program from "./components/Program";
+// import Testimonials from "./components/Testimonials";
+// import Tickets from "./components/Tickets";
+// import { Faq, CtaFinal, Footer } from "./components/Footer";
 
 export default function App() {
   const [scrolled, setScrolled] = useState<boolean>(false);
