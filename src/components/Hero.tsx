@@ -1,5 +1,4 @@
 import "../styles/Hero.css";
-import logo from "../images/header-logo.png";
 
 export default function Hero() {
   return (
