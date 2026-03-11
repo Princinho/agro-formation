@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;0,700;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─── CSS Variables ─────────────────────────────────────────── */
+:root {
+  --color-bg:          #0a0f0d;
+  --color-bg-alt:      #080c0a;
+  --color-bg-green:    #0d1a10;
+  --color-accent:      #c9d87a;
+  --color-accent-soft: #8fa87a;
+  --color-text:        #f0ece0;
+  --color-text-muted:  #a8a494;
+  --color-text-dim:    #8a8a7a;
+  --color-text-faint:  #5a5e52;
+  --color-text-ghost:  #3a3e32;
+  --color-border:      rgba(143, 168, 122, 0.15);
+  --color-border-soft: rgba(143, 168, 122, 0.1);
+  --color-border-mid:  rgba(143, 168, 122, 0.2);
+  --font-display:      'Cormorant Garamond', Georgia, serif;
+  --font-body:         'DM Sans', sans-serif;
+  --max-width:         1200px;
+  --section-padding:   120px 48px;
+}
+
+/* ─── Reset ─────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-display);
+  background: var(--color-bg);
+  color: var(--color-text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────── */
+::-webkit-scrollbar        { width: 4px; }
+::-webkit-scrollbar-track  { background: var(--color-bg); }
+::-webkit-scrollbar-thumb  { background: var(--color-accent-soft); border-radius: 2px; }
+
+/* ─── Keyframes ──────────────────────────────────────────────── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from { width: 0; }
+  to   { width: 80px; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes grain {
+  0%,  100% { transform: translate(0, 0); }
+  10%        { transform: translate(-2%, -3%); }
+  30%        { transform: translate(1%, -1%); }
+  50%        { transform: translate(-1%, 2%); }
+  70%        { transform: translate(2%, 1%); }
+  90%        { transform: translate(-1%, -2%); }
+}
+
+/* ─── Grain Overlay ─────────────────────────────────────────── */
+.grain-overlay {
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  animation: grain 0.5s steps(1) infinite;
+}
+
+/* ─── Buttons ────────────────────────────────────────────────── */
+.cta-btn {
+  display: inline-block;
+  padding: 18px 48px;
+  background: var(--color-accent);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 1px;
+}
+
+.cta-btn:hover {
+  background: var(--color-text);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px rgba(201, 216, 122, 0.3);
+}
+
+.cta-btn--outline {
+  display: inline-block;
+  padding: 16px 40px;
+  background: transparent;
+  color: var(--color-accent);
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  border: 1px solid var(--color-accent);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border-radius: 1px;
+}
+
+.cta-btn--outline:hover {
+  background: rgba(201, 216, 122, 0.1);
+  transform: translateY(-2px);
+}
+
+/* ─── Typography helpers ─────────────────────────────────────── */
+.section-label {
+  font-family: var(--font-body);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+.divider {
+  width: 80px;
+  height: 1px;
+  background: var(--color-accent);
+  animation: slideRight 0.8s ease both;
+}
+
+/* ─── Floating decoration ────────────────────────────────────── */
+.floating-leaf {
+  position: absolute;
+  font-size: 120px;
+  opacity: 0.04;
+  animation: float 6s ease-in-out infinite;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ─── Responsive ─────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  :root {
+    --section-padding: 80px 24px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hide-mobile { display: none !important; }
+}
