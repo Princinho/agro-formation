@@ -8,7 +8,7 @@ export default function Navbar({ scrolled }: NavbarProps) {
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <a href="#" className="navbar__logo">
-        <span>La Cible &nbsp;</span>SARL
+        <span>Apélété &nbsp;</span>A.
       </a>
       <div className="navbar__links hide-mobile">
         {/* <a href="#formation" className="navbar__link">La Formation</a>

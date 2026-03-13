@@ -17,7 +17,7 @@ export default function Hero() {
           <a
             href="https://tiktok.com/@apelete_a"
             target="_blank"
-            rel="noreferrer"
+            rel="noopener noreferrer"
             className="tiktok-badge"
           >
             <span>▶</span> @apelete_a · 500K+ abonnés TikTok
@@ -25,15 +25,15 @@ export default function Hero() {
         </div>
 
         <p className="section-label hero__date">
-          Paris · Avril 2025 · Date à confirmer
+          Paris · Mai 2025 · Date à confirmer
         </p>
 
         <h1 className="hero__title">
-          L'Afrique est le
+          L"AgroBusiness
           <br />
-          <em>futur de l'agro-</em>
+          <em>Rentable</em>
           <br />
-          <em>business mondial.</em>
+          <em>au Togo.</em>
         </h1>
 
         <p className="hero__subtitle">
