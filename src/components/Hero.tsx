@@ -24,15 +24,15 @@ export default function Hero() {
           </a>
         </div>
 
-        <p className="section-label hero__date">
-          Paris · Mai 2025 · Date à confirmer
+        <p className="section-label hero__date">09 Mai 2026</p>
+        <p className="section-label ">
+          66 rue des archives 75003, Paris3- France
         </p>
 
         <h1 className="hero__title">
-          L"AgroBusiness
+          L"Agrobusiness
           <br />
-          <em>Rentable</em>
-          <br />
+          <em>rentable</em> &nbsp;
           <em>au Togo.</em>
         </h1>
 
@@ -40,17 +40,24 @@ export default function Hero() {
           En tant que diaspora africaine, vous avez une longueur d'avance
           unique.
           <br />
-          Apelete A vous montre comment en faire une opportunité concrète et
+          Mr Apelete A. vous montre comment en faire une opportunité concrète et
           rentable.
         </p>
 
         <div className="hero__cta-group">
           <a
-            href="https://dcaqaymu.mychariow.shop/prd_ae2gfq"
+            href="https://dcaqaymu.mychariow.shop/prd_ae2gfq?chw_pvar=MQ2SW5"
             target="_blank"
             className="cta-btn"
           >
-            Réserver ma place
+            Réserver ma place (Présentiel)
+          </a>
+          <a
+            href="https://dcaqaymu.mychariow.shop/prd_zbuh2b"
+            target="_blank"
+            className="cta-btn"
+          >
+            Réserver ma place (Streaming)
           </a>
           {/* <a href="#formation" className="cta-btn cta-btn--outline">
             Découvrir la formation
