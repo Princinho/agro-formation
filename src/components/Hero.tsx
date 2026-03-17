@@ -30,7 +30,7 @@ export default function Hero() {
         </p>
 
         <h1 className="hero__title">
-          L"Agrobusiness
+          L'Agrobusiness
           <br />
           <em>rentable</em> &nbsp;
           <em>au Togo.</em>
