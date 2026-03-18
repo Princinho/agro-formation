@@ -164,8 +164,7 @@ function ChariowNote() {
     <div className="confirm-chariow-note">
       <span className="confirm-chariow-note__icon">📧</span>
       <p className="confirm-chariow-note__text">
-        <strong>Un reçu de paiement</strong> vous a été envoyé par email via
-        Chariow. Si vous ne le recevez pas dans les prochaines minutes, vérifiez
+        <strong>Un reçu de paiement</strong> vous a été envoyé par email. Si vous ne le recevez pas dans les prochaines minutes, vérifiez
         vos spams ou contactez-nous à l'adresse indiquée en bas de page.
       </p>
     </div>

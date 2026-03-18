@@ -161,8 +161,7 @@ function ChariowNote() {
     <div className="confirm-chariow-note">
       <span className="confirm-chariow-note__icon">📧</span>
       <p className="confirm-chariow-note__text">
-        <strong>Un reçu de paiement</strong> vous a été envoyé par email via
-        Chariow. Si vous ne le recevez pas dans les prochaines minutes, vérifiez
+        <strong>Un reçu de paiement</strong> vous a été envoyé par email. Si vous ne le recevez pas dans les prochaines minutes, vérifiez
         vos spams ou contactez-nous à l'adresse indiquée en bas de page.
       </p>
     </div>
@@ -178,10 +177,6 @@ function NextSteps() {
     {
       label: "Confirmation de participation",
       desc: "Vous recevrez un email de l'équipe d'Apélété ADOUKONOU confirmant votre place et contenant les informations pratiques.",
-    },
-    {
-      label: "Lieu exact à Paris",
-      desc: "L'adresse précise de la salle vous sera communiquée par email dès qu'elle sera confirmée, bien avant le 09 Mai 2026.",
     },
     {
       label: "Lien de streaming",
