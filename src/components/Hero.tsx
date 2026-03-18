@@ -49,12 +49,14 @@ export default function Hero() {
             href="https://dcaqaymu.mychariow.shop/prd_ae2gfq?chw_pvar=MQ2SW5"
             target="_blank"
             className="cta-btn"
-          >
+            rel="noopener"
+            >
             Réserver ma place (Présentiel)
           </a>
           <a
             href="https://dcaqaymu.mychariow.shop/prd_zbuh2b"
             target="_blank"
+            rel="noopener"
             className="cta-btn"
           >
             Réserver ma place (Streaming)

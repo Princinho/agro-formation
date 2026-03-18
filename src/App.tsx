@@ -4,15 +4,44 @@ import "./styles/globals.css";
 
 import Navbar from "./components/Navbar";
 import Hero from "./components/Hero";
-// import Stats from "./components/Stats";
-// import About from "./components/About";
-// import WhyAfrica from "./components/WhyAfrica";
-// import Program from "./components/Program";
-// import Testimonials from "./components/Testimonials";
-// import Tickets from "./components/Tickets";
-// import { Faq, CtaFinal, Footer } from "./components/Footer";
+import ConfirmationPage from "./components/ConfirmationPage";
+import StreamingConfirmationPage from "./components/StreamingConfirmationPage";
 
-export default function App() {
+// Simple client-side router — no dependency needed.
+// Chariow redirects to: https://votre-site.com/confirmation?ref=...&name=...&email=...
+//
+// Listens to both:
+//  - popstate  → browser back/forward buttons
+//  - pushState → patched below so navigate() triggers re-renders
+function usePathname(): string {
+  const [path, setPath] = useState<string>(window.location.pathname);
+
+  useEffect(() => {
+    const update = () => setPath(window.location.pathname);
+
+    // Patch pushState so programmatic navigation also triggers re-render
+    const originalPushState = history.pushState.bind(history);
+    history.pushState = (...args: Parameters<typeof history.pushState>) => {
+      originalPushState(...args);
+      update();
+    };
+
+    window.addEventListener("popstate", update);
+    return () => {
+      window.removeEventListener("popstate", update);
+      history.pushState = originalPushState;
+    };
+  }, []);
+
+  return path;
+}
+
+// Helper: navigate without a full page reload
+export function navigate(to: string): void {
+  history.pushState(null, "", to);
+}
+
+function LandingPage() {
   const [scrolled, setScrolled] = useState<boolean>(false);
 
   useEffect(() => {
@@ -23,20 +52,26 @@ export default function App() {
 
   return (
     <>
-      {/* Grain texture overlay */}
       <div className="grain-overlay" aria-hidden="true" />
-
       <Navbar scrolled={scrolled} />
       <Hero />
-      {/* <Stats /> */}
-      {/* <About />
+      {/* <Stats />
+      <About />
       <WhyAfrica />
       <Program />
       <Testimonials />
       <Tickets />
       <Faq />
-      <CtaFinal /> */}
-      {/* <Footer /> */}
+      <CtaFinal />
+      <Footer /> */}
     </>
   );
+}
+
+export default function App() {
+  const path = usePathname();
+
+  if (path === "/confirmation") return <ConfirmationPage />;
+  if (path === "/confirmationstreaming") return <StreamingConfirmationPage />;
+  return <LandingPage />;
 }
